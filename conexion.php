@@ -3,6 +3,20 @@
         echo  leersalidas();
         exit;
     }
+    if ($_GET["funcion"]==="guardar"){
+        $barco = $_GET["barco"];
+        $patron = $_GET["patron"];
+        $destino = $_GET["destino"];
+        $salida = $_GET["salida"];
+        $llegada = $_GET["llegada"];
+       echo guardar($barco,$patron,$destino,$salida,$llegada);
+     //   echo   leersalidas();
+
+      
+       
+//        echo   implode(",", $_GET);
+      exit;
+  }
     function conectar(){
             $enlace = mysqli_connect("127.0.0.1", "root", "", "club");
 
@@ -13,19 +27,26 @@
         }
 
 
+        function guardar($barco,$patron,$destino,$salida,$llegada){
+            $sql = "insert into salidas values(null,$barco,$patron,'$salida','$llegada','$destino')";
+            $conn = conectar();
+            $result =  mysqli_query($conn, $sql);
+            return $sql;
+        }
 
 
 
-        function leerusuarios(){
+
+        function leerbarcos(){
         
             $sql = "SELECT * FROM barcos";
             $conn = conectar();
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
-                $cad =  "<select class='form-control'><option>Seleccione Barco</option>";
+                $cad =  "<select id='barcos' class='form-control'><option>Seleccione Barco</option>";
                while($row = mysqli_fetch_assoc($result)) {
-                  $cad = $cad ."<option> " . $row["matricula"]. "  -- " . $row["nombre"]. 
+                  $cad = $cad ."<option value = ". $row["matricula"] ."> " . $row["matricula"]. "  -- " . $row["nombre"]. 
                     "</option>";
                }
                $cad = $cad . "</select>";
@@ -44,9 +65,9 @@
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
-                $cad =  "<select class='form-control'><option>Seleccione capitan</option>";
+                $cad =  "<select id='patron' class='form-control'><option>Seleccione capitan</option>";
                while($row = mysqli_fetch_assoc($result)) {
-                  $cad = $cad ."<option> " . $row["id"]. "  -- " . $row["nombres"].   "</option>";
+                  $cad = $cad ."<option value = ". $row["id"] ." > " . $row["id"]. "  -- " . $row["nombres"].   "</option>";
                }
                $cad = $cad . "</select>";
                return $cad;
@@ -62,7 +83,6 @@
             $result = mysqli_query($conn, $sql);
             $cad="";
             if (mysqli_num_rows($result) > 0) {
-                $cad =  "";
                while($row = mysqli_fetch_assoc($result)) {
                   $cad = $cad ."<tr><td> " . $row["id"]. "</td>" .
                                "<td> " . $row["idbarco"]. "</td>" .
@@ -70,7 +90,7 @@
                                "<td> " . $row["fechaentrada"]. "</td>" .
                                "<td> " . $row["destino"]. "</td>" .
                                "<td> " . "Socio???". "</td>" .
-                               "<td> " . "<button class='btn btn-primary'>Opciones</button>". "</td></tr>" ;
+                               "<td> " . "<button click='guardar(".$row['id'].")' id=".$row["id"]." class='btn btn-primary'>Opciones</button>". "</td></tr>" ;
                        }
                return $cad;
             }else {return "";}
@@ -78,5 +98,7 @@
         
         }
 
+
+    
 
 ?>

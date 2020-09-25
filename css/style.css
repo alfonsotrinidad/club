@@ -47,4 +47,18 @@ background: linear-gradient(to top, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ 
 
 }
 
+.table{
+    width: 80%;
+    margin-left: auto;
+}
+
+#imgcabeza{
+    background-position: center;
+    background-image: url('../images/Primera.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+    
+}
+
 
