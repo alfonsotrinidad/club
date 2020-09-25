@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+.caja{
+    color: blue;
+}
+.fila{
+    background-color: red;
+    color: rgb(31, 58, 207); ;
+}
+
+.labels{
+    font-size: 12px;
+}
+
+body{
+height:50vmax;
+background: rgba(147,206,222,1);
+background: -moz-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 19%, rgba(170,221,235,1) 65%, rgba(117,189,209,1) 97%, rgba(117,189,209,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(147,206,222,1)), color-stop(19%, rgba(117,189,209,1)), color-stop(65%, rgba(170,221,235,1)), color-stop(97%, rgba(117,189,209,1)), color-stop(100%, rgba(117,189,209,1)));
+background: -webkit-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 19%, rgba(170,221,235,1) 65%, rgba(117,189,209,1) 97%, rgba(117,189,209,1) 100%);
+background: -o-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 19%, rgba(170,221,235,1) 65%, rgba(117,189,209,1) 97%, rgba(117,189,209,1) 100%);
+background: -ms-linear-gradient(top, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 19%, rgba(170,221,235,1) 65%, rgba(117,189,209,1) 97%, rgba(117,189,209,1) 100%);
+background: linear-gradient(to bottom, rgba(147,206,222,1) 0%, rgba(117,189,209,1) 19%, rgba(170,221,235,1) 65%, rgba(117,189,209,1) 97%, rgba(117,189,209,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#75bdd1', GradientType=0 );
+}
+
+.foot {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  
+    color: white;
+    text-align: center;
+  }
+
+
+.jumbotron{
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    background: #0052D4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #6FB1FC, #4364F7, #0052D4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
